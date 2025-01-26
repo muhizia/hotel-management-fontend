@@ -1,3 +1,6 @@
+import Image from "next/image";
+import customer1 from './assets/img/customer1.webp'
+
 export default function Reviews() {
     return (
         <div className="review-container">
@@ -10,6 +13,7 @@ export default function Reviews() {
         </div>
         <div className="cards-container">
           <div className="card">
+            {/* <Image src={customer1} alt="alt" width={} height={} /> */}
             <img src="./assets/img/customer1.webp" alt="" className="card-avi" />
             <h2 className="card-title">
               Mark Essien

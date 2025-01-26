@@ -1,101 +1,193 @@
+"use client";
+// Import useState from 'react' library
+import { useState } from "react";
+import Script from 'next/script'
 import Image from "next/image";
+import Services from './components/services'
+// import  "bootstrap/dist/css/bootstrap.min.css"
+import Footer from './components/footer'
+import Reviews from './components/reviews'
+import Rooms from './components/rooms'
+
+import "../public/assets/css/fonts.css"
+import "../public/assets/css/global-header.css"
+import "../public/assets/css/global-footer.css"
+import "../public/assets/css/accesibility.css"
+import "../public/assets/css/pages.css"
+import "../public/assets/img/favicon.webp"
+
+// import "../public/assets/js/index.js"
+// import "../public/assets/js/toggleHamburger.js"
+
 
 export default function Home() {
+  const [onFocusDeparture, setOnfocusDeparture] = useState('text')
+  const [onFocusArrival, setOnFocusArrival] = useState('text')
+  
+  const handleSetOnfocusDeparture = () => {
+    setOnfocusDeparture('date');
+  };
+  const handleSetOnfocusArrival = () => {
+    setOnFocusArrival('date');
+  };
+  
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <>
+    {/* <script src="assets/js/index.js"></script> */}
+    <Script src="assets/js/toggleHamburger.js"></Script>
+  <div className="scroll-bar" id="loader">
+    <svg
+      version="1.1"
+      id="L9"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 100 100"
+      enableBackground="new 0 0 0 0"
+      xmlSpace="preserve"
+    >
+      <path
+        fill="#d4af37"
+        d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"
+      >
+        <animateTransform
+          attributeName="transform"
+          attributeType="XML"
+          type="rotate"
+          dur="1s"
+          from="0 50 50"
+          to="360 50 50"
+          repeatCount="indefinite"
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+      </path>
+    </svg>
+  </div>
+  <header>
+    <div className="header-container">
+      <nav className="header-nav-bar">
+        <div className="header-nav-logo">
+          <a href="index.html">
+            {/* <img
+              src="https://res.cloudinary.com/joshuafolorunsho/image/upload/v1591615159/star_hotels_logo.png"
+              alt="star hotels logo"
+            /> */}
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <ul className="header-nav-lists">
+          <li className="header-nav-list">
+            <a className="header-nav-link header-active" href="index.html">
+              Home
+            </a>
+          </li>
+          <li className="header-nav-list">
+            <a className="header-nav-link" href="rooms-and-suites.html">
+              Rooms and Suites
+            </a>
+          </li>
+          <li className="header-nav-list">
+            <a className="header-nav-link" href="facilities.html">
+              Facilities
+            </a>
+          </li>
+          <li className="header-nav-list">
+            <a className="header-nav-link" href="contact-page.html">
+              Contact Us
+            </a>
+          </li>
+          <li className="header-nav-list">
+            <a
+              className="header-btn header-btn-custom"
+              href="https://timbu.com/search?query=hotel"
+            >
+              BOOK NOW
+            </a>
+          </li>
+        </ul>
+        <div className="header-hamburger-icon">
+          <div className="header-hamburger-line-1" />
+          <div className="header-hamburger-line-2" />
+          <div className="header-hamburger-line-3" />
+        </div>
+      </nav>
     </div>
+  </header>
+  <div className="jumbotron-container">
+    <div className="jumbotron-left">
+      <h2 className="jumbotron-header">
+        Discover the perfect balance <br /> of hospitality, luxury and <br />
+        comfort.
+      </h2>
+      <p>
+        We are focused on providing clients with the highest level
+        <br />
+        of comfort and excellent affordable rates
+      </p>
+      <a
+        href="https://timbu.com/search?query=hotel"
+        className="btn btn-fill btn-large"
+      >
+        Book Now
+      </a>
+    </div>
+    <div className="jumbotron-right">
+      <form action="" className="jumbotron-form">
+        {/* Put the form here */}
+        <h3>Scared you can't afford it?</h3>
+        <br />
+        <p>
+          Don't worry, our hotel offers the best
+          <br /> affordable rates you can ever find.
+        </p>
+        <label className="hide" htmlFor="arrival">
+          arrival date
+        </label>
+        <input
+          type={onFocusArrival}
+          id="arrival"
+          name="arrival_date"
+          placeholder="Arrival Date"
+          onFocus={handleSetOnfocusArrival}
+        />
+        <br />
+        <label className="hide" htmlFor="departure">
+          departure date
+        </label>
+        <input
+          type={onFocusDeparture}
+          id="departure"
+          name="departure_date"
+          placeholder="Departure Date"
+          onFocus={handleSetOnfocusDeparture}
+        />
+        <br />
+        <label className="hide" htmlFor="guests">
+          how many guests
+        </label>
+        <input type="text" id="guests" name="guests" placeholder="Guests" />
+        <br />
+        <label className="hide" htmlFor="children">
+          children
+        </label>
+        <input
+          type="text"
+          id="children"
+          name="children"
+          placeholder="Children"
+        />
+        <br />
+        <button type="button" className="rates">
+          CHECK RATES
+        </button>
+      </form>
+    </div>
+  </div>
+  {/* Enjoy your stay in our hotel */}
+  <Services />
+  <Rooms />
+  {/* Client Reviews */}
+  <Reviews />
+  <Footer />
+</>
   );
 }

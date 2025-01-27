@@ -1,4 +1,4 @@
-export default function MainMenu() {
+export default function MainMenu({active}) {
     return (
         <header>
             <div className="header-container">
@@ -13,12 +13,12 @@ export default function MainMenu() {
                 </div>
                 <ul className="header-nav-lists">
                 <li className="header-nav-list">
-                    <a className="header-nav-link header-active" href="index.html">
+                    <a className={`${active=='home' ? 'header-nav-link header-active' : 'header-nav-link' }`} href={"/"}>
                     Home
                     </a>
                 </li>
                 <li className="header-nav-list">
-                    <a className="header-nav-link" href="rooms-and-suites.html">
+                    <a className={`${active=='rooms' ? 'header-nav-link header-active' : 'header-nav-link' }`} href="/rooms">
                     Rooms and Suites
                     </a>
                 </li>

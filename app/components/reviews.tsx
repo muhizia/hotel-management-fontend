@@ -1,5 +1,7 @@
-import Image from "next/image";
-import customer1 from './assets/img/customer1.webp'
+import ReviewCard from './review-card';
+import customer1 from '../../public/assets/img/customer1.webp'
+import customer2 from '../../public/assets/img/customer2.webp'
+import customer3 from '../../public/assets/img/customer3.webp'
 
 export default function Reviews() {
     return (
@@ -12,37 +14,9 @@ export default function Reviews() {
           <p className="">We are very proud of the services we offer to our customers.<br />Read every word from our happy customers.</p>
         </div>
         <div className="cards-container">
-          <div className="card">
-            {/* <Image src={customer1} alt="alt" width={} height={} /> */}
-            <img src="./assets/img/customer1.webp" alt="" className="card-avi" />
-            <h2 className="card-title">
-              Mark Essien
-            </h2>
-            <h3 className="card-subtitle">
-              Lagos, Nigeria.
-            </h3>
-            <p className="card-desc">Words can't explain the kind of treatment I received from the management of star hotels. They are the best in the country.</p>
-          </div>
-          <div className="card">
-            <img src="./assets/img/customer2.webp" alt="" className="card-avi" />
-            <h2 className="card-title">
-              Seyi Onifade
-            </h2>
-            <h3 className="card-subtitle">
-              Lagos, Nigeria.
-            </h3>
-            <p className="card-desc">Star hotels makes you feel the best room quality that makes you feel the comfort of a home.</p>
-          </div>
-          <div className="card">
-            <img src="./assets/img/customer3.webp" alt="" className="card-avi" />
-            <h2 className="card-title">
-              Fayemi David
-            </h2>
-            <h3 className="card-subtitle">
-              Lagos, Nigeria.
-            </h3>
-            <p className="card-desc">My Family and I are very happy when we lodge into star hotels. They are by far the best in the universe.</p>
-          </div>
+            <ReviewCard customer={customer1} title={"Mark Essien"} sub={"Lagos, Nigeria."} desc={"Words can't explain the kind of treatment I received from the management of star hotels. They are the best in the country."} />
+            <ReviewCard customer={customer2} title={"Seyi Onifade"} sub={"Lagos, Nigeria."} desc={"Star hotels makes you feel the best room quality that makes you feel the comfort of a home."} />
+            <ReviewCard customer={customer3} title={"Fayemi David"} sub={"Lagos, Nigeria."} desc={"My Family and I are very happy when we lodge into star hotels. They are by far the best in the universe."} />
         </div>
       </div>
     );

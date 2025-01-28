@@ -1,3 +1,5 @@
+import FacilityItem from './facility-item';
+import check_square from '../../public/assets/img/check-square.svg'
 export default function Reviews() {
     return (
     <section className="special-offers">
@@ -60,36 +62,9 @@ export default function Reviews() {
         the universe
       </p>
       <ul className="offers-list">
-        <li>
-          <div>
-            <img
-              src="assets/img/check-square.svg"
-              alt="tick"
-              className="list-icon"
-            />
-            <p className="list-text">Standard Room</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <img
-              src="assets/img/check-square.svg"
-              alt="tick"
-              className="list-icon"
-            />
-            <p className="list-text">Executive Room</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <img
-              src="assets/img/check-square.svg"
-              alt="tick"
-              className="list-icon"
-            />
-            <p className="list-text">King Suite</p>
-          </div>
-        </li>
+        <FacilityItem itemTitle={"Standard Room"} img={check_square} />
+        <FacilityItem itemTitle={"Executive Room"} img={check_square} />
+        <FacilityItem itemTitle={"King Suite"} img={check_square} />
       </ul>
       <a
         href="https://timbu.com/search?query=hotel"

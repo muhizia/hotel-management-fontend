@@ -23,7 +23,7 @@ export default function MainMenu({active}) {
                     </a>
                 </li>
                 <li className="header-nav-list">
-                    <a className="header-nav-link" href="facilities.html">
+                <a className={`${active=='facilities' ? 'header-nav-link header-active' : 'header-nav-link' }`} href="/facilities">
                     Facilities
                     </a>
                 </li>
